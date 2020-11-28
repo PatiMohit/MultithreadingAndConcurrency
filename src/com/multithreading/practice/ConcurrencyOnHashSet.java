@@ -19,13 +19,9 @@ public class ConcurrencyOnHashSet {
 
     }
 
-    static Runnable r1 = new Runnable() {
-        @Override
-        public void run() {
+    private static Runnable r1 = ()->{
             for (int i = 0; i < 10; i++) {
                 hashSet.add("Thread : "+Thread.currentThread().getName()+ " i : " +i);
-            }
-        }
-    };
+    }};
 
 }
