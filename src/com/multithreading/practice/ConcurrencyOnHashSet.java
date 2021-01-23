@@ -8,7 +8,9 @@ public class ConcurrencyOnHashSet {
 
 
     public static void main(String args[]) throws InterruptedException {
-
+        Runnable r1 = ()->{
+            for (int i = 0; i < 10; i++) {
+            }};
         Thread t1 = new Thread(r1);
         Thread t2 = new Thread(r1);
         t1.start();
@@ -18,10 +20,5 @@ public class ConcurrencyOnHashSet {
         hashSet.forEach(System.out::println);
 
     }
-
-    private static Runnable r1 = ()->{
-            for (int i = 0; i < 10; i++) {
-                hashSet.add("Thread : "+Thread.currentThread().getName()+ " i : " +i);
-    }};
 
 }
